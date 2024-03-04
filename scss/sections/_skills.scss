@@ -1,0 +1,64 @@
+.skills {
+  margin-bottom: 128rem;
+  @include mobile {
+    margin-bottom: 60rem;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 34rem;
+    line-height: 118%;
+    letter-spacing: 0.01em;
+    margin-bottom: 60rem;
+    text-align: center;
+    transition: 0.2s all ease-in-out;
+    &:hover {
+      color: var(--hover);
+    }
+  }
+
+  &__item {
+    max-width: 1110rem;
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24rem;
+  }
+
+  &__info {
+    border-radius: 8rem;
+    background: var(--rellenos);
+    padding: 24rem;
+    flex: 0 1 calc((100% - 24rem * 2) / 3);
+    transition: 0.2s all ease-in-out;
+    &:hover {
+      box-shadow: 5rem 5rem 10rem var(--hover);
+    }
+    @include desktop-small {
+      flex: 0 1 calc((100% - 24rem * 1) / 2);
+    }
+
+    @include mobile {
+      flex: 0 1 100%;
+    }
+  }
+
+  &__img {
+    margin-bottom: 10rem;
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: 34rem;
+    line-height: 118%;
+    letter-spacing: 0.01em;
+    margin-bottom: 10rem;
+  }
+
+  &__desc {
+    font-weight: 400;
+    font-size: 16rem;
+    line-height: 175%;
+    letter-spacing: 0.03em;
+  }
+}

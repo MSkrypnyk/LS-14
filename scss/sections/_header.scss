@@ -1,0 +1,154 @@
+.header {
+  margin-top: 18rem;
+  padding-bottom: 18rem;
+  border-bottom: 1rem solid var(--bordes);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+
+  &__logo {
+    font-family: var(--second-family);
+    font-weight: 600;
+    font-size: 24rem;
+    line-height: 133%;
+    transition: 0.2s all ease-in-out;
+    &:hover {
+      color: var(--hover);
+    }
+  }
+
+  &__nav {
+    @include mobile {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      overflow-y: auto;
+      padding-top: 100rem;
+      background: var(--fondo);
+      animation: burgerAnimation 0.4s;
+    }
+  }
+
+  &__ul {
+    display: flex;
+    text-align: center;
+    gap: 23rem;
+    @include mobile {
+      flex-direction: column;
+      gap: 32rem;
+      text-align: left;
+      border-top: 1rem solid var(--bordes);
+      border-bottom: 1rem solid var(--bordes);
+      padding: 30rem 0 30rem 30rem;
+    }
+  }
+
+  &__a {
+    font-weight: 500;
+    font-size: 16rem;
+    line-height: 100%;
+    position: relative;
+
+    &:hover::before,
+    &.is-active::before {
+      transform: scale(1);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 3rem;
+      position: absolute;
+      left: 0;
+      bottom: -3rem;
+      background: var(--primario);
+      transform: scale(0);
+      transition: 0.2s all ease-in-out;
+    }
+
+    @include mobile {
+      font-family: var(--third-family);
+    }
+  }
+
+  &__menu {
+    display: none;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30rem;
+    height: 18rem;
+    @include mobile {
+      display: flex;
+    }
+  }
+
+  &__menu span {
+    height: 2rem;
+    width: 80%;
+    transform: scale(1);
+    background: var(--blanco);
+  }
+
+  &__menu::before,
+  &__menu::after {
+    content: "";
+    position: absolute;
+    height: 2rem;
+    width: 100%;
+    background: var(--blanco);
+    transition: 0.3s all ease-in-out;
+  }
+
+  &__menu::before {
+    top: 0;
+  }
+  &__menu::after {
+    bottom: 0;
+  }
+
+  &__menu.active span {
+    transform: scale(0);
+  }
+
+  &__menu.active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+  }
+
+  &__menu.active::after {
+    top: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+  }
+
+  &__menu.active {
+    position: fixed;
+    right: 20rem;
+  }
+}
+
+.open {
+  display: flex !important;
+}
+
+@keyframes burgerAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

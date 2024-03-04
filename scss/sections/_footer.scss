@@ -1,0 +1,84 @@
+.footer {
+  &__content {
+    display: flex;
+    gap: 129rem;
+    padding-top: 64rem;
+    padding-bottom: 64rem;
+    border-top: 1rem solid var(--bordes);
+    border-bottom: 1rem solid var(--bordes);
+    @include tablet {
+      flex-direction: column;
+      gap: 32rem;
+      align-items: center;
+    }
+    @include mobile {
+      padding-top: 40rem;
+      padding-bottom: 40rem;
+    }
+  }
+
+  &__logo {
+    font-family: var(--second-family);
+    font-weight: 600;
+    font-size: 24rem;
+    line-height: 133%;
+    transition: 0.2s all ease-in-out;
+    &:hover {
+      color: var(--hover);
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 24rem;
+    @include tablet {
+      align-items: center;
+    }
+  }
+
+  &__link-primary {
+    font-weight: 500;
+    font-size: 16rem;
+    line-height: 125%;
+    letter-spacing: 0.01em;
+    color: var(--acento);
+    transition: 0.2s all ease-in-out;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__link {
+    font-weight: 400;
+    font-size: 14rem;
+    line-height: 143%;
+    letter-spacing: 0.02em;
+    transition: 0.2s all ease-in-out;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 16rem;
+  }
+
+  &__icon {
+    display: inline-block;
+  }
+
+  &__info {
+    font-weight: 400;
+    font-size: 12rem;
+    line-height: 133%;
+    letter-spacing: 0.03em;
+    margin-top: 17rem;
+    margin-bottom: 32rem;
+    @include tablet {
+      text-align: center;
+    }
+  }
+}
